@@ -6,11 +6,10 @@ import "./AuthStyle.css"
 const AuthPage = () => {
   return (
     <>
-    <Flex minH={"100vh"}>
       <Box className="logo">
         <Image src='/public/assets/PIC LOGO.png' h={58} alt='PIC' />
-      </Box>
-      <Flex justifyContent={"center"} alignItems={"center"} px={4}>
+      </Box> 
+      <Flex minH={"80vh"} justifyContent={"center"} alignItems={"center"} px={4}>
         <Container maxW={"container.md"} padding={0}>
           <Flex justifyContent={"center"} alignItems={"center"} gap={50} >
             {/* Left hand-side */}
@@ -27,7 +26,6 @@ const AuthPage = () => {
 
         </Container>
       </Flex>
-    </Flex>
     </>
   )
 }
