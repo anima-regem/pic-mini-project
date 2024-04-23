@@ -1,20 +1,20 @@
-.tagline{
-    color: #000000;
-    font-family:'Sora',sans-serif;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 40px; 
-}  
-.highlight{
-    color: #127B7E;
-    text-align: center;
-    font-family: 'Sora';
-    font-size: 60px;
-    font-style: normal;
-    font-weight: 700;
+.tagline {
+  color: #000000;
+  font-family: "Sora", sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
 }
-.logo{
-    padding-top:20px ;
-    padding-left: 20px;
+.highlight {
+  color: #127b7e;
+  text-align: center;
+  font-family: "Sora";
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+}
+.logo {
+  padding-top: 20px;
+  padding-left: 20px;
 }
