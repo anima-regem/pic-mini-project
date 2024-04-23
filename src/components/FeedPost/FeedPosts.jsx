@@ -3,11 +3,11 @@ import FeedPost from './FeedPost';
 import { useEffect,useState } from 'react';
 
 const FeedPosts = () => {
-  const[isLoading, setIsLoding]=useState(true);
+  const[isLoading, setIsLoading]=useState(true);
 
   useEffect(() => {
     setTimeout(() =>{
-      setIsLoding(false)
+      setIsLoading(false)
     },2000 )
   },[])
 
