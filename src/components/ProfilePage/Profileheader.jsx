@@ -1,4 +1,4 @@
-import {Flex,Button,VStack} from '@chakra-ui/react';
+import {Flex,Button,VStack, Text, AvatarGroup, Avatar} from '@chakra-ui/react';
 
 const ProfileHeader = () => {
     return(
@@ -42,7 +42,7 @@ const ProfileHeader = () => {
                 </Text>
             </Flex>
             <Flex alignItems={"center"} gap={4}>
-                <Text fontSize={"sm"} fontWeight={"bold" > As} a Programmer />
+                <Text fontSize={"sm"} fontWeight={"bold" } As a Programmer />
             </Flex>
                 <Text fontSize={"sm"}>As a Programmer</Text>
             </VStack>
