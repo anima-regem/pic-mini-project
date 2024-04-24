@@ -1,4 +1,7 @@
 import {Container, Flex} from '@chakra-ui/react';
+import  ProfileHeader from './ProfileHeader';
+import ProfilePosts from './ProfilePosts';
+import Profiletabs from './Profiletabs';
 
 const ProfilePage = () => {
     return <Container mxW="container.lg" py={5}>
@@ -20,7 +23,7 @@ const ProfilePage = () => {
             borderColor={"whiteAlpha.300"}
             direction={"column"}
         >
-            <ProfileTabs/>
+            <Profiletabs/>
             <ProfilePosts/>
         </Flex>
     </Container>;
