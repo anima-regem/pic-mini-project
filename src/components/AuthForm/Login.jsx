@@ -1,5 +1,5 @@
-import { ViewIcon, ViewOffIcon,Alert,AlertIcon } from "@chakra-ui/icons";
-import { Button, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
+import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { Button, Input,Alert, AlertIcon ,InputGroup, InputRightElement } from "@chakra-ui/react";
 import { useState } from "react";
 import useLogin from "../../hooks/useLogin";
 import "./AuthForm.css";
