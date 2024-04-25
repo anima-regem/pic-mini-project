@@ -1,6 +1,7 @@
-import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { ViewIcon, ViewOffIcon,Alert,AlertIcon } from "@chakra-ui/icons";
 import { Button, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 import { useState } from "react";
+import useLogin from "../../hooks/useLogin";
 import "./AuthForm.css";
 
 const Login = () => {
@@ -8,6 +9,7 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const {error, login } = useLogin();
   const [showPassword, setShowPassword] = useState(false);
   
   return (
@@ -39,7 +41,14 @@ const Login = () => {
           </Button>
         </InputRightElement>
       </InputGroup>
-      <button className="btn">Login</button>
+      {error && (
+				<Alert status='error' fontSize={13} p={2} borderRadius={4}>
+					<AlertIcon fontSize={12} />
+					{error.message}
+				</Alert>
+			)}
+      <button className="btn" 
+				onClick={() => login(inputs)}>Login</button>
     </>
   );
 };
