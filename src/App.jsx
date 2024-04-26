@@ -10,9 +10,9 @@ function App() {
   return (
     <>
       <Routes>
-      <Route path='/profile' element={<Profilepage/>} />
       <Route path='/' element={authUser ? <HomePage /> : <Navigate to='/auth' />} />
 			<Route path='/auth' element={!authUser ? <AuthPage /> : <Navigate to='/' />} />
+      <Route path='/:username' element={<Profilepage />} />
       </Routes>
     </>
   );
