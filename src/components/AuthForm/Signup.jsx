@@ -6,6 +6,9 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  Radio,
+  RadioGroup,
+  Stack
 } from "@chakra-ui/react";
 import { useState } from "react";
 import useSignUpWithEmailandPassword from "../../hooks/useSignUpWithEmailandPassword";
@@ -22,6 +25,17 @@ const Signup = () => {
   const { error, signup } = useSignUpWithEmailandPassword();
   return (
     <>
+      <RadioGroup defaultValue='1'>
+      <Stack spacing={4} direction='row'>
+      <Radio value='Innovator'
+      onChange={(e) => setInputs({ ...inputs, userType: e.target.value })}>
+        Innovators
+      </Radio>
+      <Radio value='Organization'
+      onChange={(e) => setInputs({ ...inputs, userType: e.target.value })}>
+       Organizations</Radio>
+     </Stack>
+    </RadioGroup>
       <Input
         placeholder="Name"
         type="text"
