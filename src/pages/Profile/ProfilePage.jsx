@@ -1,8 +1,7 @@
 import {Container, Flex} from '@chakra-ui/react';
-import Profileheader from "../../components/ProfilePage/Profileheader";
-import Profiletabs from "../../components/ProfilePage/Profiletabs";
-import ProfilePosts from "../../components/ProfilePage/ProfilePosts";
-
+import  Profileheader from '../../components/profile/Profileheader';
+import ProfilePosts from '../../components/profile/ProfilePosts';
+import Profiletabs from '../../components/profile/Profiletabs';
 const ProfilePage = () => {
     return <Container mxW="container.lg" py={5}>
       <Flex

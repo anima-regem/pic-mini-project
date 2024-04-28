@@ -5,12 +5,12 @@ import SuggestedUsers from "../../components/SuggestedUsers/SuggestedUsers";
 
 const HomePage = () => {
 	return (
-		<Container maxW={'1200px'} paddingLeft={"100px"}>
+		<Container maxW={'container.lg'} paddingLeft={"100px"}>
 			<Flex gap={10}>
-				<Box flex={2} py={10} top={0} borderLeft={'1px solid #127B7E'}>
+				<Box flex={2} py={10} top={0}>
 					<FeedPosts />
 				</Box>
-				<Box flex={3} mr={50} display={{ base: "none", lg: "block" }} maxW={"400px"} borderLeft={'1px solid #127B7E'}>
+				<Box flex={3} mr={50} display={{ base: "none", lg: "block" }} maxW={"300px"} borderLeft={'1px solid #127B7E'}>
 					<SuggestedUsers />
 				</Box>
 			</Flex>
