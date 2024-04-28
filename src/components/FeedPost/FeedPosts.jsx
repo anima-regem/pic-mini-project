@@ -12,7 +12,7 @@ const FeedPosts = () => {
   },[])
 
   return (
-    <Container maxW={"container.lg"} py={10} px={2} paddingLeft={'50px'}>
+    <Container maxW={"container.sm"} py={10} px={2} >
       {isLoading && [0.1,2,3].map((_,idx) => (
         <VStack key={idx} gap={4} alignItems={'flex-start'} mp={10}>
           <Flex gap={2}>
@@ -23,7 +23,7 @@ const FeedPosts = () => {
             </VStack>
           </Flex>
           <Skeleton w="full">
-            <Box h={'500px'}>Contents wrapped</Box>
+            <Box h={'400px'}>Contents wrapped</Box>
           </Skeleton>
         </VStack>
       ))}
