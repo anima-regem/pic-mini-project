@@ -3,9 +3,10 @@ import { Box, Container, Flex } from "@chakra-ui/react";
 import FeedPosts from "../../components/FeedPost/FeedPosts";
 import SuggestedUsers from "../../components/SuggestedUsers/SuggestedUsers";
 
+
 const HomePage = () => {
 	return (
-		<Container maxW={'container.lg'} paddingLeft={"100px"}>
+		<Container maxW={'container.lg'} paddingLeft={"100px"} fontFamily="Sora , sans-serif">
 			<Flex gap={10}>
 				<Box flex={2} py={10} top={0}>
 					<FeedPosts />
