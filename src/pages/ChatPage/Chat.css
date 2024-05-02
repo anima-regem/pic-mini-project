@@ -49,7 +49,7 @@
     height: calc(430px);
     overflow: scroll;
 }
-.msg {
+.message {
     display: flex;
     gap: 20px;
     margin-bottom: 20px;
