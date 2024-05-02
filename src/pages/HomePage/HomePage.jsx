@@ -6,7 +6,7 @@ import SuggestedUsers from "../../components/SuggestedUsers/SuggestedUsers";
 
 const HomePage = () => {
 	return (
-		<Container maxW={'container.lg'} paddingLeft={"100px"} fontFamily="Sora , sans-serif">
+		<Container maxW={'container.lg'} fontFamily="Sora , sans-serif">
 			<Flex gap={10}>
 				<Box flex={2} py={10} top={0}>
 					<FeedPosts />
