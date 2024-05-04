@@ -1,44 +1,10 @@
-import { Box, Flex, Image,  Tooltip, Link ,Avatar} from '@chakra-ui/react';
-import { AiFillHome } from "react-icons/ai";
+import { Box, Flex, Image,  Tooltip, Link} from '@chakra-ui/react';
 import { Link as RouterLink } from "react-router-dom";
 import { BiLogOut } from "react-icons/bi";
-import { CgAddR } from "react-icons/cg";
-import { FiMessageCircle } from "react-icons/fi";
-import { IoSearchSharp,IoNotifications } from "react-icons/io5";
-
-
+import SidebarItems from "./SidebarItems";
 
 const Sidebar = () => {
-  const sidebarItems = [
-    {
-      icon: <AiFillHome size={25} color={"#127B7E "} />,
-      text: "Home",
-      link: "/",
-    },
-    {
-      icon: <IoSearchSharp size={25} color={"#127B7E "}/>,
-      text: "Search",
-    },
-    {
-      icon: <CgAddR size={25} color={"#127B7E "} />,
-      text: "Post",
-    },
-    {
-      icon: < FiMessageCircle size={25} color={"#127B7E"}/>,
-      text: "Chats",
-      link: "/chat",
-    },
-    {
-      icon: <IoNotifications size={25} color={"#127B7E "}/>,
-      text : "Notifications",
-      link : "/",
-    },
-    {
-      icon : <Avatar size={"sm"} src="/avatar.png"/>,
-      text : "Profile",
-      link : "/:username",
-    },
-  ];
+
 
   return (
     <Box
@@ -47,46 +13,17 @@ const Sidebar = () => {
       borderRight={"1px solid #127B7E"}
       py={8}
       position={"sticky"}
-      top={0}
+      top={5}
       left={0}
       px={{ base: 2, md: 4 }}
+      justifyContent={"space-between"}
     >
-      <Flex direction={"column"} gap={10} w="full">
-        <Image src="/public/assets/PIC LOGO.png" w={100} h={58} alt="PIC" />
+      <Flex direction={"column"} gap={3} w="full">
+        <Image src="/public/assets/PIC LOGO.png" w={100} h={58} alt="PIC" marginBottom={10} />
       </Flex>
-      <Flex direction={"column"} gap={5} cursor={"pointer"} paddingTop={10}>
-        {sidebarItems.map((item, index) => (
-          <Tooltip
-            key={index}
-            hasArrow
-            label={item.text}
-            placement="right"
-            ml={1}
-            openDelay={500}
-            display={{ base: "block", md: "none" }}
-          >
-            <Link
-              display={"flex"}
-              to={item.link || null}
-              as={RouterLink}
-              alignitems={"center"}
-              gap={4}
-              _hover={{ bg: "whiteAlpha.400" }}
-              borderRadius={6}
-              p={2}
-              mt={"auto"}
-              w={{ base: 10, md: "full" }}
-              justifyContent={{ base: "center", md: "flex-start" }}
-            >
-              {item.icon}
-              <Box display={{ base: "none", md: "block" }} color={"#127B7E"}>
-                {item.text}
-              </Box>
-            </Link>
-          </Tooltip>
-        ))}
-        ;
-      </Flex>
+      <Flex direction={"column"}  gap={5}cursor={"pointer"} >
+					<SidebarItems />
+				</Flex>
       <Tooltip
         hasArrow
         label={"Logout"}
@@ -94,6 +31,7 @@ const Sidebar = () => {
         ml={1}
         openDelay={500}
         display={{ base: "block", md: "none" }}
+        
       >
         <Link
           display={"flex"}
@@ -103,12 +41,13 @@ const Sidebar = () => {
           gap={4}
           _hover={{ bg: "whiteAlpha.400" }}
           borderradius={6}
+          paddingTop={10}
           p={2}
           w={{ base: 10, md: "full" }}
-          justifycontent={{ base: "center", md: "flex-start" }}
+          justifycontent={{ base: "center", md: "flex-end" }}
         >
-          <BiLogOut size={25} color={"#127B7E"} />
-          <Box display={{ base: "none", md: "block" }} color={"#127B7E"}>
+          <BiLogOut size={25} color={"#127B7E"}/>
+          <Box display={{ base: "none", md: "block" }} color={"#127B7E"} >
             Logout
           </Box>
         </Link>
