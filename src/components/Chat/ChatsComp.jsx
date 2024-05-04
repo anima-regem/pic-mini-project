@@ -41,7 +41,7 @@ const ChatsComp = () => {
                     src="../../../public/assets/avatar.png"
                   />
                   <VStack spacing={0} alignItems={"start"}>
-                    <Text className="text">{chat[1].userInfo.username}</Text>
+                    <Text className="text">{chat[1].userInfo?.username}</Text>
                     <Text className="text2">{chat[1].lastMessage?.text}</Text>
                   </VStack>
                 </HStack>
@@ -54,3 +54,4 @@ const ChatsComp = () => {
 };
 
 export default ChatsComp;
+

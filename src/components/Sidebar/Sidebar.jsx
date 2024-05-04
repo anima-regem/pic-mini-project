@@ -106,7 +106,7 @@ const Sidebar = () => {
           justifycontent={{ base: "center", md: "flex-start" }}
         >
           <BiLogOut size={25} color={"#127B7E"} />
-          <Box display={{ base: "none", md: "block" }} color={"#127B7E"}>
+          <Box display={{ base: "none", md: "block" }} marginTop={5} color={"#127B7E"} >
             Logout
           </Box>
         </Link>
