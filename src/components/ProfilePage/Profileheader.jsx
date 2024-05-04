@@ -30,8 +30,8 @@ const ProfileHeader = () => {
 					{visitingOwnProfileAndAuth && (
 						<Flex gap={4} alignItems={"center"} justifyContent={"center"}>
 							<Button
-								bg={"white"}
-								color={"black"}
+								bg={"#127B7E"}
+								color={"white"}
 								_hover={{ bg: "whiteAlpha.800" }}
 								size={{ base: "xs", md: "sm" }}
 								onClick={onOpen}
@@ -63,13 +63,13 @@ const ProfileHeader = () => {
 						</Text>
 						Posts
 					</Text>
-					<Text fontSize={{ base: "xs", md: "sm" }}>
+					<Text fontSize={{ base: "xs", md: "sm" }} color={"#127B7E"}>
 						<Text as='span' fontWeight={"bold"} mr={1}>
 							{userProfile.followers.length}
 						</Text>
 						Followers
 					</Text>
-					<Text fontSize={{ base: "xs", md: "sm" }}>
+					<Text fontSize={{ base: "xs", md: "sm" }} color={"#127B7E"}>
 						<Text as='span' fontWeight={"bold"} mr={1}>
 							{userProfile.following.length}
 						</Text>

@@ -7,16 +7,31 @@ import { auth } from "./firebase/firebase";
 // import Sidebar from "./components/Sidebar/Sidebar";
 import PageLayout from "./Layouts/PageLayout/PageLayout";
 import ProfilePage from "./pages/Profile/ProfilePage";
+import { useContext } from "react";
+import {AuthContext} from "./context/AuthContext";
 
 function App() {
   const [authUser] = useAuthState(auth);
+  const { currentUser }  = useContext(AuthContext);
+  const ProtectedRoute = ({ children }) => {
+    if (!currentUser) {
+      return <Navigate to="/login" />;
+    }
+
+    return children
+  };
   return (
     <PageLayout>
       <Routes>
       <Route path='/' element={authUser ? <HomePage /> : <Navigate to='/auth' />} />
 			<Route path='/auth' element={!authUser ? <AuthPage /> : <Navigate to='/' />} />
       <Route path='/:username' element={<ProfilePage/>} />
-      <Route path='/chat' element={<Chat/>} />
+      <Route path='/chat' element={
+              <ProtectedRoute>
+                <Chat/>
+              </ProtectedRoute>
+            }
+          />
       </Routes>
     </PageLayout>
   );
