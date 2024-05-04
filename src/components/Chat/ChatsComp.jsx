@@ -7,23 +7,14 @@ import { firestore } from "../../firebase/firebase";
 
 const ChatsComp = () => {
   const [chats, setChats] = useState([]);
-
   const { currentUser } = useContext(AuthContext);
   const { dispatch } = useContext(ChatContext);
 
   useEffect(() => {
     const getChats = () => {
-      const unsub = onSnapshot(
-        doc(firestore, "chats", currentUser.uid),
-        (doc) => {
-          if (doc.exists()) {
-            setChats(doc.data());
-          } else {
-            console.log("No such document!");
-            setChats({});
-          }
-        }
-      );
+      const unsub = onSnapshot(doc(firestore, "userChats", currentUser.uid), (doc) => {
+        setChats(doc.data());
+      });
 
       return () => {
         unsub();
@@ -40,10 +31,9 @@ const ChatsComp = () => {
   return (
     <>
       <div className="comp1">
-        {Object.entries(chats)
-          .sort(([, chatA], [, chatB]) => chatB.date - chatA.date)
-          .map(([chatId, chat]) => (
-            <div key={chatId} onClick={() => handleSelect(chat.userInfo)}>
+      {Object.entries(chats)?.sort((a,b)=>b[1].date - a[1].date).map((chat) => (
+            <div  key={chat[0]}
+              onClick={() => handleSelect(chat[1].userInfo)}>
               <div className="comp1">
                 <HStack spacing={4}>
                   <Image
@@ -51,8 +41,8 @@ const ChatsComp = () => {
                     src="../../../public/assets/avatar.png"
                   />
                   <VStack spacing={0} alignItems={"start"}>
-                    <Text className="text">{chat.userInfo.username}</Text>
-                    <Text className="text2">{chat.lastMessage?.text}</Text>
+                    <Text className="text">{chat[1].userInfo.username}</Text>
+                    <Text className="text2">{chat[1].lastMessage?.text}</Text>
                   </VStack>
                 </HStack>
               </div>
