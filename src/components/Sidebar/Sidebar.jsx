@@ -9,7 +9,6 @@ const Sidebar = () => {
   return (
     <Box
       height={"100vh"}
-      width={"200px"}
       borderRight={"1px solid #127B7E"}
       py={8}
       position={"sticky"}
