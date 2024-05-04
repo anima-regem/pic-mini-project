@@ -4,7 +4,7 @@ import { auth, firestore } from "../../firebase/firebase";
 import useShowToast from "../../hooks/useShowToast";
 import useAuthStore from "../../store/authStore";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-const GoogleAuth = () => {
+const GoogleAuth = ({prefix}) => {
 
   const [signInWithGoogle, , , error] = useSignInWithGoogle(auth);
 	const showToast = useShowToast();
@@ -65,7 +65,7 @@ const GoogleAuth = () => {
         >
           <Image src="/public/assets/Google logo.svg" w={5} alt="Google logo" />
           <Text mx="2" color={"#127B7E"}>
-            Login with Google
+            {prefix} with Google
           </Text>
         </Flex>
       </Box>
