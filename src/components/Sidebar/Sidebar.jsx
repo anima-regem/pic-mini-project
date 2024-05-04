@@ -1,12 +1,11 @@
-import { Box, Flex, Image,  Tooltip, Link } from '@chakra-ui/react';
+import { Box, Flex, Image,  Tooltip, Link ,Avatar} from '@chakra-ui/react';
 import { AiFillHome } from "react-icons/ai";
 import { Link as RouterLink } from "react-router-dom";
 import { BiLogOut } from "react-icons/bi";
-import { FaSearch } from "react-icons/fa";
 import { CgAddR } from "react-icons/cg";
 import { FiMessageCircle } from "react-icons/fi";
 import { IoSearchSharp,IoNotifications } from "react-icons/io5";
-import { MdOutlineEventAvailable } from "react-icons/md";
+
 
 
 const Sidebar = () => {
@@ -17,7 +16,7 @@ const Sidebar = () => {
       link : "/",
     },
     {
-      icon: <IoSearchSharp size={30} color={"#127B7E "}/>,
+      icon: <IoSearchSharp size={25} color={"#127B7E "}/>,
       text: "Search",
     },
     {
@@ -25,17 +24,18 @@ const Sidebar = () => {
       text: "Post",
     },
     {
-      icon: <MdOutlineEventAvailable size={25} color={"#127B7E"}/>,
-      text: "Events",
-    },
-    {
       icon: < FiMessageCircle size={25} color={"#127B7E"}/>,
       text: "Chats",
     },
     {
       icon: <IoNotifications size={25} color={"#127B7E "}/>,
-      text : "Home",
+      text : "Notifications",
       link : "/",
+    },
+    {
+      icon : <Avatar size={"sm"} src="/avatar.png"/>,
+      text : "Profile",
+      link : "/:username",
     },
 
     // Replace other icons similarly with Image components or regular img tags

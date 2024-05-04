@@ -25,7 +25,7 @@ const AuthForm = () => {
 					<Box flex={2} h={"1px"} bg={"gray.500"} />
         </Flex>
         
-        <GoogleAuth/>
+        <GoogleAuth prefix={isLogin ? "Log in" : "Sign up"}/>
 
         <Box padding={5}>
           <Flex alignItems={"center"} justifyContent={"center"}>
