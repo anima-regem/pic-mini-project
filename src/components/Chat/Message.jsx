@@ -1,4 +1,4 @@
-import {Image} from "@chakra-ui/react";
+import { Image } from "@chakra-ui/react";
 import { useContext, useEffect, useRef } from "react";
 // import { ChatContext } from "../../context/ChatContext";
 import { AuthContext } from "../../context/AuthContext";
@@ -13,18 +13,20 @@ const Message = ({ message }) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   }, [message]);
 
-  
   return (
-    <div  ref={ref} className={`message ${message.senderId === currentUser.uid && "owner"}`}>
-      <div className='messageInfo'>
-        <Image className="icon" src="../../../public/assets/avatar.png"/>
-        <span className='text2'>Just now</span>
+    <div
+      ref={ref}
+      className={`message ${message.senderId === currentUser.uid && "owner"}`}
+    >
+      <div className="messageInfo">
+        <Image className="icon" src="../../../public/assets/avatar.png" />
+        <span className="text2">Just now</span>
       </div>
-      <div className='messageContent'>
-        <p className='dialog'>{message.text}</p>
+      <div className="messageContent">
+        <p className="dialog">{message.text}</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Message
+export default Message;

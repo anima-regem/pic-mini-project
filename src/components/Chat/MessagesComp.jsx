@@ -1,9 +1,8 @@
-import Message from './Message';
+import Message from "./Message";
 import { doc, onSnapshot } from "firebase/firestore";
-import  { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ChatContext } from "../../context/ChatContext";
 import { firestore } from "../../firebase/firebase";
-
 
 const MessagesComp = () => {
   const [messages, setMessages] = useState([]);
@@ -19,14 +18,14 @@ const MessagesComp = () => {
     };
   }, [data.chatId]);
 
-  console.log(messages)
+  console.log(messages);
   return (
-    <div className='messages'>
+    <div className="messages">
       {messages.map((m) => (
         <Message message={m} key={m.id} />
       ))}
     </div>
-  )
-}
+  );
+};
 
 export default MessagesComp;

@@ -1,4 +1,10 @@
-import {Stack,InputGroup,InputRightAddon, Input, Image} from "@chakra-ui/react";
+import {
+  Stack,
+  InputGroup,
+  InputRightAddon,
+  Input,
+  Image,
+} from "@chakra-ui/react";
 import { useContext, useState } from "react";
 import { ChatContext } from "../../context/ChatContext";
 import { AuthContext } from "../../context/AuthContext";
@@ -26,21 +32,19 @@ const InputComp = () => {
 
       const uploadTask = uploadBytesResumable(storageRef, img);
 
-      uploadTask.on(
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-            await updateDoc(doc(firestore, "chats", data.chatId), {
-              messages: arrayUnion({
-                id: uuid(),
-                text,
-                senderId: currentUser.uid,
-                date: Timestamp.now(),
-                img: downloadURL,
-              }),
-            });
+      uploadTask.on(() => {
+        getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+          await updateDoc(doc(firestore, "chats", data.chatId), {
+            messages: arrayUnion({
+              id: uuid(),
+              text,
+              senderId: currentUser.uid,
+              date: Timestamp.now(),
+              img: downloadURL,
+            }),
           });
-        }
-      );
+        });
+      });
     } else {
       await updateDoc(doc(firestore, "chats", data.chatId), {
         messages: arrayUnion({
@@ -70,18 +74,24 @@ const InputComp = () => {
     setImg(null);
   };
   return (
-    <div className='input'>
-    <Stack spacing={4}>
+    <div className="input">
+      <Stack spacing={4}>
         <InputGroup>
-          <Input type='text' placeholder='Start Messaging....' onChange={(e) => setText(e.target.value)}
-          value={text} />
-          <InputRightAddon><button onClick={handleSend}>
-          <Image w={8} h={8} src="../../../public/assets/SEND.png"/>
-          </button></InputRightAddon>
+          <Input
+            type="text"
+            placeholder="Start Messaging...."
+            onChange={(e) => setText(e.target.value)}
+            value={text}
+          />
+          <InputRightAddon>
+            <button onClick={handleSend}>
+              <Image w={8} h={8} src="../../../public/assets/SEND.png" />
+            </button>
+          </InputRightAddon>
         </InputGroup>
       </Stack>
     </div>
-  )
-}
+  );
+};
 
 export default InputComp;

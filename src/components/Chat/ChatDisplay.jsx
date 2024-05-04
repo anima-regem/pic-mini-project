@@ -1,6 +1,6 @@
-import {HStack, Image, VStack, Text} from "@chakra-ui/react";
-import { Stack,InputGroup,InputRightAddon, Input} from "@chakra-ui/react";
-import  { useContext, useState } from "react";
+import { HStack, Image, VStack, Text } from "@chakra-ui/react";
+import { Stack, InputGroup, InputRightAddon, Input } from "@chakra-ui/react";
+import { useContext, useState } from "react";
 import {
   collection,
   query,
@@ -77,35 +77,40 @@ const ChatDisplay = () => {
     }
 
     setUser(null);
-    setUsername("")
+    setUsername("");
   };
   return (
     <>
-    <Stack spacing={4} paddingRight={4} paddingTop={2}>
+      <Stack spacing={4} paddingRight={4} paddingTop={2}>
         <InputGroup>
-          <Input type='text' placeholder='Search user' onKeyDown={handleKey}
-          onChange={(e) => setUsername(e.target.value)}
-          value={username}/>
-          <InputRightAddon><button>
-          <Image w={8} h={8} src="../../../public/assets/search.png"/>
-          </button>
+          <Input
+            type="text"
+            placeholder="Search user"
+            onKeyDown={handleKey}
+            onChange={(e) => setUsername(e.target.value)}
+            value={username}
+          />
+          <InputRightAddon>
+            <button>
+              <Image w={8} h={8} src="../../../public/assets/search.png" />
+            </button>
           </InputRightAddon>
         </InputGroup>
       </Stack>
       {err && <span>User not found!</span>}
       {user && (
         <div className="comp1" onClick={handleSelect}>
-        <HStack spacing={4}>
-          <Image className="icon" src="../../../public/assets/avatar.png"/>
-          <VStack spacing={0} alignItems={'start'}>
-            <Text className='text'>{user.username}</Text>
-            {/* <Text className='text2'>Attached a new message</Text> */}
-          </VStack>
-        </HStack>
-      </div>
-    )}
+          <HStack spacing={4}>
+            <Image className="icon" src="../../../public/assets/avatar.png" />
+            <VStack spacing={0} alignItems={"start"}>
+              <Text className="text">{user.username}</Text>
+              {/* <Text className='text2'>Attached a new message</Text> */}
+            </VStack>
+          </HStack>
+        </div>
+      )}
     </>
-  )
-}
+  );
+};
 
 export default ChatDisplay;

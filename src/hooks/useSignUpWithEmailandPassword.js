@@ -52,7 +52,7 @@ const useSignUpWithEmailAndPassword = () => {
 				loginUser(userDoc);
 				//create empty user chats on firestore
 				await setDoc(doc(firestore, "userChats", newUser.user.uid), {});
-				navigate("/chat");
+				navigate("/");
 			}
 		} catch (error) {
 			showToast("Error", error.message, "error");

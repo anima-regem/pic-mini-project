@@ -1,6 +1,4 @@
-import {Text} from "@chakra-ui/react";
-
-
+import { Text } from "@chakra-ui/react";
 
 const Navbar = () => {
   return (
@@ -9,7 +7,7 @@ const Navbar = () => {
         <Text className="txt">Messages</Text>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default Navbar;
