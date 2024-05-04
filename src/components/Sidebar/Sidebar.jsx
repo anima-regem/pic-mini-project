@@ -2,11 +2,12 @@ import { Box, Flex, Image, Tooltip, Link } from "@chakra-ui/react";
 import { AiFillHome } from "react-icons/ai";
 import { Link as RouterLink } from "react-router-dom";
 import { BiLogOut } from "react-icons/bi";
-// import { FaSearch } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { CgAddR } from "react-icons/cg";
 import { FiMessageCircle } from "react-icons/fi";
-import { IoSearchSharp, IoNotifications } from "react-icons/io5";
+import { IoSearchSharp,IoNotifications } from "react-icons/io5";
 import { MdOutlineEventAvailable } from "react-icons/md";
+
 
 const Sidebar = () => {
   const sidebarItems = [
@@ -16,7 +17,7 @@ const Sidebar = () => {
       link: "/",
     },
     {
-      icon: <IoSearchSharp size={30} color={"#127B7E "} />,
+      icon: <IoSearchSharp size={25} color={"#127B7E "} />,
       text: "Search",
     },
     {

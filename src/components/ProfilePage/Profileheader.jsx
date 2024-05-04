@@ -1,6 +1,8 @@
 import { Avatar, AvatarGroup,Button,Flex,Text,VStack} from "@chakra-ui/react";
 
+
 const Profileheader = () => {
+	
     return (
 		<Flex gap={{ base: 4, sm: 10 }} py={10} direction={{ base: "column", sm: "row" }}>
 			<AvatarGroup size={{ base: "xl", md: "2xl" }} justifySelf={"center"} alignSelf={"flex-start"} mx={"auto"}>
@@ -15,12 +17,12 @@ const Profileheader = () => {
 					alignItems={"center"}
 					w={"full"}
 			>
-                    <Text fontSize={{ base: "sm", md: "lg" }}>asaprogrammer_</Text>
+                    <Text fontSize={{ base: "sm", md: "lg" }} color={"#127B7E"} fontWeight={"bold"}>asaprogrammer_</Text>
 
                     <Flex gap={4} alignItems={"center"} justifyContent={"center"}>
 							<Button
-								bg={"white"}
-								color={"black"}
+								bg={"#127B7E"}
+								color={"white"}
 								_hover={{ bg: "whiteAlpha.800" }}
 								size={{ base: "xs", md: "sm" }}
 							>
@@ -29,19 +31,19 @@ const Profileheader = () => {
 						</Flex>
                     </Flex>
                      <Flex alignItems={"center"} gap={{ base: 2, sm: 4 }}>
-					<Text fontSize={{ base: "xs", md: "sm" }}>
+					<Text fontSize={{ base: "xs", md: "sm" }} color={"#127B7E"}>
 						<Text as='span' fontWeight={"bold"} mr={1}>
 							4
 						</Text>
 						Posts
 					</Text>
-					<Text fontSize={{ base: "xs", md: "sm" }}>
+					<Text fontSize={{ base: "xs", md: "sm" }} color={"#127B7E"}>
 						<Text as='span' fontWeight={"bold"} mr={1}>
 							149
 						</Text>
 						Followers
 					</Text>
-					<Text fontSize={{ base: "xs", md: "sm" }}>
+					<Text fontSize={{ base: "xs", md: "sm" }} color={"#127B7E"}>
 						<Text as='span' fontWeight={"bold"} mr={1}>
 							175
 						</Text>
