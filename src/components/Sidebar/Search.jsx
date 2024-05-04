@@ -1,4 +1,4 @@
-import { SearchLogo } from "../../assets/constants";
+import { SearchLogo } from "../../../public/assets/constants";
 import useSearchUser from "../../hooks/useSearchUser";
 import { useRef } from "react";
 import SuggestedUser from "../../components/SuggestedUsers/SuggestedUser";
@@ -49,12 +49,14 @@ const Search = () => {
           onClick={onOpen}
         >
           <SearchLogo />
-          <Box display={{ base: "none", md: "block" }}>Search</Box>
+          <Box display={{ base: "none", md: "block" }} color={"#127B7E"}>
+            Search
+          </Box>
         </Flex>
       </Tooltip>
       <Modal isOpen={isOpen} onClose={onClose} motionPreset="slideInLeft">
         <ModalOverlay />
-        <ModalContent bg={"black"} border={"1px solid gray"} maxW={"400px"}>
+        <ModalContent bg={"white"} border={"1px solid  #127b7e"} maxW={"400px"}>
           <ModalHeader>Search user</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>

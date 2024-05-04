@@ -2,9 +2,11 @@ import { Box, Flex, Image,  Tooltip, Link} from '@chakra-ui/react';
 import { Link as RouterLink } from "react-router-dom";
 import { BiLogOut } from "react-icons/bi";
 import SidebarItems from "./SidebarItems";
+import useLogout from "../../hooks/useLogout";
 
 const Sidebar = () => {
 
+  const {handleLogout } = useLogout();
 
   return (
     <Box
@@ -29,8 +31,7 @@ const Sidebar = () => {
         placement="right"
         ml={1}
         openDelay={500}
-        display={{ base: "block", md: "none" }}
-        
+        display={{ base: "block", md: "none" }}  
       >
         <Link
           display={"flex"}
@@ -46,9 +47,11 @@ const Sidebar = () => {
           justifycontent={{ base: "center", md: "flex-end" }}
         >
           <BiLogOut size={25} color={"#127B7E"}/>
+          <button onClick= {handleLogout}>
           <Box display={{ base: "none", md: "block" }} color={"#127B7E"} >
             Logout
           </Box>
+          </button>
         </Link>
       </Tooltip>
     </Box>
