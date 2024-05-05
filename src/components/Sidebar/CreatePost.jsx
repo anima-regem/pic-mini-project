@@ -1,8 +1,9 @@
 import { CgAddR } from "react-icons/cg";
 import { Box, Link, Tooltip } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
+// import Test from './Test';
 
-const Home = () => {
+const CreatePost = () => {
 	return (
         <Tooltip
                     hasArrow
@@ -33,5 +34,4 @@ const Home = () => {
             </Tooltip>
         );
     };
-        
-export default Home;
+export default CreatePost;
