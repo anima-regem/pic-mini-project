@@ -2,7 +2,7 @@ import { Box, Link, Tooltip } from "@chakra-ui/react";
 import { FiMessageCircle } from "react-icons/fi";
 import { Link as RouterLink } from "react-router-dom";
 
-const Home = () => {
+const Chatbox = () => {
 	return (
         <Tooltip
                     hasArrow
@@ -34,4 +34,4 @@ const Home = () => {
         );
     };
         
-export default Home;
+export default Chatbox
