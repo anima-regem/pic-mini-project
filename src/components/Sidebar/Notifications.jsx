@@ -2,7 +2,7 @@ import { IoNotifications } from "react-icons/io5";
 import { Box, Link, Tooltip } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
-const Home = () => {
+const Notifications = () => {
 	return (
         <Tooltip
                     hasArrow
@@ -34,4 +34,4 @@ const Home = () => {
         );
     };
         
-export default Home;
+export default Notifications;

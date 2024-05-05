@@ -2,7 +2,7 @@ import { Box, Link, Tooltip } from "@chakra-ui/react";
 import { IoSearchSharp } from "react-icons/io5";
 import { Link as RouterLink } from "react-router-dom";
 
-const Home = () => {
+const Search = () => {
 	return (
         <Tooltip
                     hasArrow
@@ -34,4 +34,4 @@ const Home = () => {
         );
     };
         
-export default Home;
+export default Search;

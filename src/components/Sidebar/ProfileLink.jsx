@@ -1,7 +1,9 @@
 import { Box, Link, Tooltip,Avatar } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
+import useAuthStore from "../../store/authStore";
 
-const Home = () => {
+const ProfileLink = () => {
+	const authUser = useAuthStore((state) => state.user);
 	return (
         <Tooltip
                     hasArrow
@@ -13,7 +15,7 @@ const Home = () => {
                 >
                 <Link
                     display={"flex"}
-                    to={"#"}
+                    to={`/${authUser?.username}`}
                     as={RouterLink}
                     alignitems={"center"}
                     gap={4}
@@ -24,7 +26,7 @@ const Home = () => {
                     w={{ base: 10, md: "full" }}
                     justifyContent={{ base: "center", md: "flex-start" }}
                     >
-                    <Avatar size={"sm"} src="/avatar.png"/>
+                    <Avatar size={"sm"} src={authUser?.profilePicURL || ""} />
                     <Box display={{ base: "none", md: "block" }} color={"#127B7E"}>
                         Profile
                     </Box>
@@ -33,4 +35,4 @@ const Home = () => {
         );
     };
         
-export default Home;
+export default ProfileLink;
