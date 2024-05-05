@@ -47,14 +47,14 @@ const EditProfile = ({ isOpen, onClose }) => {
 		<>
 			<Modal isOpen={isOpen} onClose={onClose}>
 				<ModalOverlay />
-				<ModalContent bg={"black"} boxShadow={"xl"} border={"1px solid gray"} mx={3}>
+				<ModalContent bg={"white"} boxShadow={"xl"} border={"1px solid #127B7E"} mx={3}>
 					<ModalHeader />
 					<ModalCloseButton />
 					<ModalBody>
 						{/* Container Flex */}
-						<Flex bg={"black"}>
-							<Stack spacing={4} w={"full"} maxW={"md"} bg={"black"} p={6} my={0}>
-								<Heading lineHeight={1.1} fontSize={{ base: "2xl", sm: "3xl" }}>
+						<Flex bg={"white"}>
+							<Stack spacing={4} w={"full"} maxW={"md"} bg={"white"} p={6} my={0}>
+								<Heading lineHeight={1.1} fontSize={{ base: "2xl", sm: "3xl" }} color={"#127B7E"}>
 									Edit Profile
 								</Heading>
 								<FormControl>
@@ -67,7 +67,7 @@ const EditProfile = ({ isOpen, onClose }) => {
 											/>
 										</Center>
 										<Center w='full'>
-											<Button w='full' onClick={() => fileRef.current.click()}>
+											<Button w='full' onClick={() => fileRef.current.click()} color={"#127B7E"}> 
 												Edit Profile Picture
 											</Button>
 										</Center>
@@ -76,32 +76,38 @@ const EditProfile = ({ isOpen, onClose }) => {
 								</FormControl>
 
 								<FormControl>
-									<FormLabel fontSize={"sm"}>Full Name</FormLabel>
+									<FormLabel fontSize={"sm"} color={"#127B7E"} >Full Name</FormLabel>
 									<Input
 										placeholder={"Full Name"}
+										border={" 1px solid #127B7E"}
 										size={"sm"}
 										type={"text"}
+										borderRadius={4}
 										value={inputs.fullName || authUser.fullName}
 										onChange={(e) => setInputs({ ...inputs, fullName: e.target.value })}
 									/>
 								</FormControl>
 
 								<FormControl>
-									<FormLabel fontSize={"sm"}>Username</FormLabel>
+									<FormLabel fontSize={"sm"} color={"#127B7E"}>Username</FormLabel>
 									<Input
 										placeholder={"Username"}
 										size={"sm"}
 										type={"text"}
+										borderRadius={4}
+										border={" 1px solid #127B7E"}
 										value={inputs.username || authUser.username}
 										onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
 									/>
 								</FormControl>
 
 								<FormControl>
-									<FormLabel fontSize={"sm"}>Bio</FormLabel>
+									<FormLabel fontSize={"sm"} color={"#127B7E"}>Bio</FormLabel>
 									<Input
 										placeholder={"Bio"}
 										size={"sm"}
+										borderRadius={4}
+										border={" 1px solid #127B7E"}
 										type={"text"}
 										value={inputs.bio || authUser.bio}
 										onChange={(e) => setInputs({ ...inputs, bio: e.target.value })}
@@ -110,21 +116,22 @@ const EditProfile = ({ isOpen, onClose }) => {
 
 								<Stack spacing={6} direction={["column", "row"]}>
 									<Button
-										bg={"red.400"}
-										color={"white"}
+										bg={"white.400"}
+										border={" 1px solid #127B7E"}
+										color={"#127B7E"}
 										w='full'
 										size='sm'
-										_hover={{ bg: "red.500" }}
+										_hover={{ bg: "#127B7E.500" }}
 										onClick={onClose}
 									>
 										Cancel
 									</Button>
 									<Button
-										bg={"blue.400"}
+										bg={"#127B7E"}
 										color={"white"}
 										size='sm'
 										w='full'
-										_hover={{ bg: "blue.500" }}
+										_hover={{ bg: "white.500" }}
 										onClick={handleEditProfile}
 										isLoading={isUpdating}
 									>

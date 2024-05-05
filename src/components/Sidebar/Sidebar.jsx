@@ -3,10 +3,8 @@ import { Link as RouterLink } from "react-router-dom";
 import { BiLogOut } from "react-icons/bi";
 import SidebarItems from "./SidebarItems";
 import useLogout from "../../hooks/useLogout";
-
 const Sidebar = () => {
-
-  const {handleLogout } = useLogout();
+  const { handleLogout, isLoggingOut } = useLogout();
 
   return (
     <Box
@@ -34,6 +32,7 @@ const Sidebar = () => {
         display={{ base: "block", md: "none" }}  
       >
         <Link
+          onClick={handleLogout}
           display={"flex"}
           to={"/auth"}
           as={RouterLink}
@@ -47,8 +46,11 @@ const Sidebar = () => {
           justifycontent={{ base: "center", md: "flex-end" }}
         >
           <BiLogOut size={25} color={"#127B7E"}/>
-          <button onClick= {handleLogout}>
-          <Box display={{ base: "none", md: "block" }} color={"#127B7E"} >
+          <Box 
+            display={{ base: "none", md: "block" }} 
+            color={"#127B7E"} 
+            isLoading={isLoggingOut}
+          >
             Logout
           </Box>
           </button>
