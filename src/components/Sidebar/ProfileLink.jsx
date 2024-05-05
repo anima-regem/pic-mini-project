@@ -26,8 +26,8 @@ const ProfileLink = () => {
                     w={{ base: 10, md: "full" }}
                     justifyContent={{ base: "center", md: "flex-start" }}
                     >
-                    <Avatar size={"sm"} src={authUser?.profilePicURL || ""} />
-                    <Box display={{ base: "none", md: "block" }} color={"#127B7E"}>
+                    <Avatar size={"sm"} src={authUser?.profilePicURL || ""} marginBottom={10} />
+                    <Box display={{ base: "none", md: "block" }} color={"#127B7E"} marginBottom={10}>
                         Profile
                     </Box>
                 </Link>
