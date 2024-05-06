@@ -26,7 +26,7 @@ import { firestore } from '../../firebase/firebase';
 
 const CreatePost = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const authUser = useAuthStore((state) => state.user);
+    // const authUser = useAuthStore((state) => state.user);
     const [caption, setCaption] = useState("");
     const [description, setDescription] = useState("");
     const { isLoading, handleCreatePost } = useCreatePost();
